@@ -93,6 +93,8 @@ public class MainActivity extends SwipeRefreshBaseActivity {
                     protected Boolean doInBackground(Object... params) {
                         if (!mIsDbInited) {
                             mIsDbInited = OldMeizhi.init();
+                            //测试数据在测试时去掉注释，因为最近没有数据; from XellosRyan
+                            //mMeizhiList.addAll(DataSupport.findAll(Meizhi.class));
                         }
                         HttpUtils httpUtils = new HttpUtils();
                         Calendar calendar = Calendar.getInstance();
