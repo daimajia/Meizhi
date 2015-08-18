@@ -1,6 +1,7 @@
 package me.drakeet.meizhi;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.ViewCompat;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,6 +47,13 @@ public class PictureActivity extends ToolbarActivity {
                     }
                 }
         );
+        //解决一开始在图片在左上角的问题
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mPhotoViewAttacher.update();
+            }
+        }, 300);
     }
 
     @Override
